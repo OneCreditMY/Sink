@@ -1,6 +1,5 @@
 interface Link {
   slug: string
-  url: string
   comment?: string
 }
 
@@ -26,7 +25,6 @@ export default eventHandler(async (event) => {
             if (key.metadata?.url) {
               list.push({
                 slug: key.name.replace('link:', ''),
-                url: key.metadata.url,
                 comment: key.metadata.comment,
               })
             }
@@ -36,14 +34,12 @@ export default eventHandler(async (event) => {
               if (link) {
                 list.push({
                   slug: key.name.replace('link:', ''),
-                  url: link.url,
                   comment: link.comment,
                 })
                 await KV.put(key.name, JSON.stringify(link), {
                   expiration: metadata?.expiration,
                   metadata: {
                     ...metadata,
-                    url: link.url,
                     comment: link.comment,
                   },
                 })
