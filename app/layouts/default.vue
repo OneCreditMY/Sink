@@ -6,6 +6,5 @@
         <slot />
       </div>
     </section>
-    <LayoutsFooter />
   </main>
 </template>

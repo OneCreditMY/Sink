@@ -1,9 +1,8 @@
+<script setup>
+// Redirect home page to error page
+await navigateTo('/error', { replace: true })
+</script>
+
 <template>
-  <main class="flex flex-col justify-center">
-    <HomeTwitter />
-    <HomeHero />
-    <HomeFeatures />
-    <HomeLogos />
-    <HomeCta />
-  </main>
+  <main />
 </template>

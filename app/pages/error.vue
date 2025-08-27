@@ -1,4 +1,9 @@
 <script setup>
+// Use the error layout (no header/footer)
+definePageMeta({
+  layout: 'error',
+})
+
 // Set page title
 useHead({
   title: 'Link Expired - Sink',
